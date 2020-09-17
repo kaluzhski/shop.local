@@ -1,0 +1,15 @@
+{% extends "main.twig" %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+  <h1>Goods</h1>
+  <ul>
+      {% for good in goods %}
+          <a href='/good/one?id={{good.id}}'>{{ good.good_name}}</a><br>
+          <p>{{good.good_price}}</p>
+          <a href='/basket/add?id={{good.id}}'>Add to basket</a><br>
+          <hr>
+      {% endfor %}
+  </ul>
+{% endblock %}

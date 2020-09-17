@@ -1,0 +1,23 @@
+{% extends "main.twig" %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+  <h1>Goods</h1>
+  <ul>
+      {% for item in basket %}
+          <p>{{item.good}}</p>
+          <p>{{item.count}}</p>
+          <a href="/basket/add?id={{item.id}}">Add</a>
+          <a href="/basket/remove?id={{item.id}}">Decrease</a>
+          <a href="/basket/delete?id={{item.id}}">Delete</a>
+          {% else %} <p>Your basket is empty</p>
+          {% endfor %}
+  </ul>
+
+
+  {% if basket != null %}
+      <a href="/order/add">Place the order</a>
+  {% endif %}
+
+{% endblock %}

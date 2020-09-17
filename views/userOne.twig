@@ -1,0 +1,10 @@
+{% extends "main.twig" %}
+
+{% block title %}User ID ({{user.id}}){% endblock %}
+
+{% block content %}
+  <h1>User Details</h1>
+  <p><b>LOGIN:</b> {{user.user_login}}</p>
+  <p><b>NAME:</b> {{user.user_name}}</p>
+  <p><b>LAST NAME:</b> {{user.user_surname}}</p>
+{% endblock %}

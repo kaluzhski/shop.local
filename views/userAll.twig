@@ -1,0 +1,13 @@
+{% extends "main.twig" %}
+
+{% block title %}All Users{% endblock %}
+
+{% block content %}
+  <h1>Users</h1>
+  <ul>
+      {% for user in users %}
+          <p>{{user.user_name}} {{user.user.user_surname}}</p>
+          <a href='/user/one?id={{user.id}}'>{{ user.user_login|e }}</a><br>
+      {% endfor %}
+  </ul>
+{% endblock %}
